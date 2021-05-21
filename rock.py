@@ -31,6 +31,7 @@ class handDetector():
             rps_result = []
             for res in self.results.multi_hand_landmarks:
                 if draw:
+                    cv2.rectangle(img, (0,0),(640, 80),(0,255,0), cv2.FILLED)
                     self.mpDraw.draw_landmarks(img, res,
                                                 self.mpHands.HAND_CONNECTIONS)
                 joint = np.zeros((21, 3))
@@ -114,7 +115,7 @@ def main():
         cTime = time.time()
         fps = 1 / (cTime - pTime)
         pTime = cTime
-        cv2.rectangle(img, (0,0),(640, 80),(0,255,0), cv2.FILLED)
+        
         cv2.putText(img, str(int(fps)), (10, 70), cv2.FONT_HERSHEY_PLAIN, 3,
                     (255, 0, 255), 3)
 
