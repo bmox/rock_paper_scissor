@@ -114,7 +114,7 @@ def main():
         cTime = time.time()
         fps = 1 / (cTime - pTime)
         pTime = cTime
-        cv2.rectangle(img, (0,0), (0, 0), (640, 80, 0), cv2.FILLED)
+        cv2.rectangle(img, (0,0),(640, 80),(0,255,0), cv2.FILLED)
         cv2.putText(img, str(int(fps)), (10, 70), cv2.FONT_HERSHEY_PLAIN, 3,
                     (255, 0, 255), 3)
 
