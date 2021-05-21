@@ -80,7 +80,7 @@ class handDetector():
                     if winner is not None:
                         cv2.putText(img, text='Winner', org=(rps_result[winner]['org'][0], rps_result[winner]['org'][1] + 70), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=2, color=(0, 255, 0), thickness=3)
                     # cv2.putText(img, text=text, org=(int(img.shape[1] / 2), 100), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=2, color=(0, 0, 255), thickness=3)
-                    cv2.rectangle(img, (0,0), (480, 640), (0, 255, 0), cv2.FILLED)
+                    
                     cv2.putText(img, text=text, org=(150, 60), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=2, color=(0, 0, 255), thickness=3)
 
                     # cv2.putText(img, text=text, org=(int(img.shape[1] / 2)-100, 100), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=2, color=(0, 0, 255), thickness=3)
@@ -114,7 +114,7 @@ def main():
         cTime = time.time()
         fps = 1 / (cTime - pTime)
         pTime = cTime
-
+        cv2.rectangle(img, (0,0), (0, 0), (640, 80, 0), cv2.FILLED)
         cv2.putText(img, str(int(fps)), (10, 70), cv2.FONT_HERSHEY_PLAIN, 3,
                     (255, 0, 255), 3)
 
